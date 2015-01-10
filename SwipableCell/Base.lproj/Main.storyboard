@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zN8-A7-8ci">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Demo Table View Controller-->
+        <scene sceneID="l9L-XU-jWh">
+            <objects>
+                <tableViewController id="zN8-A7-8ci" customClass="DemoTableViewController" customModule="SwipableCell" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" id="8f6-WJ-pBN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="75" id="v9B-BL-SOv" customClass="DemoCell" customModule="SwipableCell" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v9B-BL-SOv" id="HBd-vP-4rx">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lb6-K1-1ej">
+                                            <rect key="frame" x="525" y="0.0" width="75" height="74"/>
+                                            <color key="backgroundColor" red="0.90273306672316556" green="0.56431448035960052" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="75" id="YV7-dE-zyP"/>
+                                            </constraints>
+                                            <state key="normal" title="Button2">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="butt2Action:" destination="zN8-A7-8ci" eventType="touchUpInside" id="xbj-MA-abB"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQI-TD-XNG">
+                                            <rect key="frame" x="450" y="0.0" width="75" height="74"/>
+                                            <color key="backgroundColor" red="1" green="0.98214620847540823" blue="0.42722035783948076" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="75" id="mU7-sN-5Hq"/>
+                                            </constraints>
+                                            <state key="normal" title="Button1"/>
+                                            <connections>
+                                                <action selector="butt1Action:" destination="zN8-A7-8ci" eventType="touchUpInside" id="NhB-8Z-Qcc"/>
+                                            </connections>
+                                        </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddK-bm-UwA">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyM-MI-LHW">
+                                                    <rect key="frame" x="33" y="27" width="218" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="lb6-K1-1ej" firstAttribute="top" secondItem="HBd-vP-4rx" secondAttribute="top" id="0v7-f8-gyj"/>
+                                        <constraint firstItem="lb6-K1-1ej" firstAttribute="leading" secondItem="yQI-TD-XNG" secondAttribute="trailing" id="4TB-10-EPZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="lb6-K1-1ej" secondAttribute="trailing" id="HPt-5T-HoQ"/>
+                                        <constraint firstItem="yQI-TD-XNG" firstAttribute="top" secondItem="HBd-vP-4rx" secondAttribute="top" id="IdN-eT-8RQ"/>
+                                        <constraint firstItem="ddK-bm-UwA" firstAttribute="leading" secondItem="HBd-vP-4rx" secondAttribute="leading" id="Ip8-d1-k6z"/>
+                                        <constraint firstAttribute="bottom" secondItem="yQI-TD-XNG" secondAttribute="bottom" id="UXy-Ub-Ueo"/>
+                                        <constraint firstAttribute="trailing" secondItem="ddK-bm-UwA" secondAttribute="trailing" id="UZe-Tx-3O6"/>
+                                        <constraint firstItem="ddK-bm-UwA" firstAttribute="top" secondItem="HBd-vP-4rx" secondAttribute="top" id="YP3-pk-Vhx"/>
+                                        <constraint firstAttribute="bottom" secondItem="lb6-K1-1ej" secondAttribute="bottom" id="Zb9-3v-KUb"/>
+                                        <constraint firstAttribute="bottom" secondItem="ddK-bm-UwA" secondAttribute="bottom" id="cw9-7Q-nLQ"/>
+                                        <constraint firstItem="lb6-K1-1ej" firstAttribute="leading" secondItem="yQI-TD-XNG" secondAttribute="trailing" id="oAC-uW-3Ao"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="butt1" destination="yQI-TD-XNG" id="35H-sE-q4j"/>
+                                    <outlet property="butt2" destination="lb6-K1-1ej" id="uHw-B0-5m2"/>
+                                    <outlet property="demoText" destination="CyM-MI-LHW" id="fUA-Tw-FUY"/>
+                                    <outlet property="theLeftConstraint" destination="Ip8-d1-k6z" id="Ody-2k-m3s"/>
+                                    <outlet property="theRightConstraint" destination="UZe-Tx-3O6" id="NLv-67-dMp"/>
+                                    <outlet property="view" destination="ddK-bm-UwA" id="aDy-ul-921"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="zN8-A7-8ci" id="dEh-CZ-LMg"/>
+                            <outlet property="delegate" destination="zN8-A7-8ci" id="1ct-5b-wIJ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UXv-He-7je" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="290" y="316"/>
+        </scene>
+    </scenes>
+</document>
