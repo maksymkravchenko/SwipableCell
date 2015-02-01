@@ -21,7 +21,7 @@ class SwipableCell: UITableViewCell {
     var isSwiped = false
     
     private var panStartPoint : CGPoint?
-    private var startRightConstraint : CGFloat?
+    private lazy var startRightConstraint = CGFloat()
     
     private var _allButtons: [UIButton]?
     private var _viewOfContents: UIView?
@@ -44,7 +44,7 @@ class SwipableCell: UITableViewCell {
         switch recognizer.state {
         case .Began :
             panStartPoint = recognizer.translationInView(viewOfContents!)
-            startRightConstraint = rightConstraint?.constant
+            startRightConstraint = rightConstraint!.constant
             resetAllVisibleCells()
             
             break
@@ -72,7 +72,7 @@ class SwipableCell: UITableViewCell {
                     }
                 }
             } else {
-                var adjustment = startRightConstraint! - deltaX
+                var adjustment = startRightConstraint - deltaX
                 if !movesLeft {
                     var constant = CGFloat(max(adjustment, 0.0))
                     if constant == 0 {
@@ -154,7 +154,7 @@ class SwipableCell: UITableViewCell {
     }
     
     func resetConstraints(animated: Bool) {
-        if startRightConstraint! == 0 && rightConstraint!.constant == 0 {
+        if startRightConstraint == 0 && rightConstraint!.constant == 0 {
             return
         }
         leftConstraint!.constant = -kBounceValue
@@ -167,7 +167,7 @@ class SwipableCell: UITableViewCell {
             
             self.updateConstraintsIfNeeded(true, completion: {
                 (finished : Bool) in
-                self.startRightConstraint! = self.rightConstraint!.constant
+                self.startRightConstraint = self.rightConstraint!.constant
             })
         })
         
